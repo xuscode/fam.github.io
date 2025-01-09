@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>刮板机 - Grain Warehouse Equipment Solution</title>
+        <title>参数关联复制 - Grain Warehouse Equipment Solution</title>
 
 
         <!-- Custom HTML head -->
@@ -12,32 +12,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
 
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
+        <script src="../toc.js"></script>
     </head>
     <body>
     <div id="body-container">
@@ -89,7 +89,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -123,7 +123,7 @@
                     <h1 class="menu-title">Grain Warehouse Equipment Solution</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -152,24 +152,82 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="刮板机"><a class="header" href="#刮板机">刮板机</a></h1>
-<p>产品列表</p>
+                        <h1 id="参数关联复制"><a class="header" href="#参数关联复制">参数关联复制</a></h1>
+<p><img src="image.png" alt="alt text" /></p>
+<h2 id="需求说明"><a class="header" href="#需求说明">需求说明</a></h2>
+<p><img src="image-1.png" alt="alt text" /></p>
 <ul>
-<li>CATGFPBlowingMachineDlg</li>
+<li>
+<p>参数关联复制
+可以将之前生成的一组构件快速移动到另外一个坐标点；
+当所有组的构件以关联形式复制的时候，例如修改一个，其他的复制的组的构件也会跟着自动修改；</p>
+</li>
+<li>
+<p>参数另存复制
+就是采用这种方式复制出来的一组产品，里面的构件可以根据自己的需求替换，例如替换机头，或者机尾等等，其他组的产品不会变；</p>
+</li>
+<li>
+<p>其他产品类似功能
+有点类似AUTOCAD的块和SKETCHUP 软件的组件功能，调节一个，其他的也跟着变化了，即可以一起变化，如果分解了某个构件，这个构件就不会跟着变化了；</p>
+</li>
+<li>
+<p>其他软件中的坐标移动概念
+在其他的三位软件里面可以随意移动物体的坐标，因为每个物体之间不是强关联的；</p>
+</li>
 </ul>
-<p><img src="./%E5%88%AE%E6%9D%BF%E6%9C%BA/image.png" alt="CATGFPBlowingMachineDlg" /></p>
+<p><img src="image-2.png" alt="alt text" /></p>
+<h2 id="catia软件中的移动"><a class="header" href="#catia软件中的移动">CATIA软件中的移动</a></h2>
+<!-- ![alt text](image-3.png)
+![alt text](image-4.png) -->
+<!-- 
+<table style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <td style="width: 50%; padding: 5px;"><img src="image-3.png" alt="图片1说明" /></td>
+        <td style="width: 50%; padding: 5px;"><img src="image-4.png" alt="图片2说明" /></td>
+    </tr>
+</table> -->
+<p><img src="image-5.png" alt="alt text" /></p>
+<ul>
+<li>
+<p>移动只存在产品与产品之间的复制和移动，零件特征内其实没有移动这个命令；</p>
+</li>
+<li>
+<p>所有的构件之间都有父子级关系去约束每个特征之间的逻辑，即便是平移等等命令，也只是这些父子关系的一种而已；因此，在零件级别，使用UDF去创建设备，只有实例化这一种方式；</p>
+</li>
+<li>
+<p>如果想再做一排设备，就需要重新设置一个坐标点，重新实例化，或者复制之前创建好的一组特征或者他们的父级（集合图形集），修改第一个轴系的坐标值；这样和重新实例化的底层逻辑是一样的；</p>
+</li>
+<li>
+<p>要想变化谁，就必须选择这个特征，不存在通过关联复制就可以改一个其他的都变；以及另存为模式就可以单独修改的情况；</p>
+</li>
+<li>
+<p>可以做到的是，一个变化，全部变化；如果要修改某个就独立去修改这个UDF 的参数，想替换某个UDF就选择需要替换的UDF；</p>
+</li>
+<li>
+<p>他们之间的关系只有一种父子级的关系；</p>
+</li>
+</ul>
+<h2 id="结论"><a class="header" href="#结论">结论</a></h2>
+<ul>
+<li>
+<p>如果想复制，需要做个独立的对话框，选择之前已经生成的一组特征，最好是选择父级几何图形集</p>
+</li>
+<li>
+<p>过程是整个复制一份，修改起始轴系的坐标；这样就会产生新的一组UDF ，他们和之前的UDF 之间也不存在父子级关系，修改需要选择构件去变参数替换元素等操作；</p>
+</li>
+<li>
+<p>假如每组构件之间不是采用轴系点线面这样的几何元素去传递位置的话，那么意味着每个构件之间只是采用数据去驱动，而不是几何驱动，后期的修改就需要写对每个构件之间进行坐标位置转换编写代码，参数传递没有太大意义；</p>
+</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="productCatalog.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../pro-guabanji.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="参数关联复制/参数关联复制.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -177,13 +235,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="productCatalog.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../pro-guabanji.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="参数关联复制/参数关联复制.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
@@ -196,13 +251,13 @@
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
